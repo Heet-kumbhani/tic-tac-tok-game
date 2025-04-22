@@ -6,6 +6,8 @@ let msg = document.querySelector("#msg");
 
 let turn = true; //p1X, p2O
 
+let count = 0;
+
 let winningPattens = [
   [0, 1, 2],
   [0, 3, 6],
@@ -22,16 +24,30 @@ boxes.forEach((box) => {
     // console.log("box clicked");
     if (turn) {
       box.innerText = "O";
+      box.classList.add("OOO");
       turn = false;
     } else {
       box.innerText = "X";
+      box.classList.add("OOs");
       turn = true;
     }
     box.disabled = true;
-
     checkWinner();
+    count++;
+
+    let iswin = checkWinner();
+    if (count === 9 && !iswin) {
+      gameDraw();
+    }
   });
 });
+
+
+const gameDraw = () => {
+  msg.innerText = "Game was a Draw.";
+  msgContainer.classList.remove("hide");
+  disableBox();
+}
 
 const disableBox = () => {
   for(let box of boxes){
@@ -69,6 +85,7 @@ const checkWinner = () => {
 
 
 const resetGame = () => {
+  count = 0;
   turn = true; //p1X, p2O
   enableBox();
   msgContainer.classList.add("hide");
