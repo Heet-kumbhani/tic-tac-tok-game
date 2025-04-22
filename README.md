@@ -4,7 +4,7 @@ A simple and fun browser-based Tic Tac Toe game built using **HTML**, **CSS**, a
 
 ## 📸 Preview
 
-![Tic Tac Toe Screenshot](https://drive.google.com/drive/folders/1XtYga_9YU98dq0pi5j3hQh6sH-kjdKOR?usp=drive_link)
+- https://drive.google.com/drive/folders/1XtYga_9YU98dq0pi5j3hQh6sH-kjdKOR?usp=drive_link
 
 
 ## ✨ Features
