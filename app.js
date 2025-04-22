@@ -24,11 +24,11 @@ boxes.forEach((box) => {
     // console.log("box clicked");
     if (turn) {
       box.innerText = "O";
-      box.classList.add("OOO");
+      box.classList.add("OOs");
       turn = false;
     } else {
       box.innerText = "X";
-      box.classList.add("OOs");
+      box.classList.remove("OOs")
       turn = true;
     }
     box.disabled = true;
@@ -37,7 +37,9 @@ boxes.forEach((box) => {
 
     let iswin = checkWinner();
     if (count === 9 && !iswin) {
-      gameDraw();
+      setTimeout(() => {
+        gameDraw();
+      }, 2000);
     }
   });
 });
